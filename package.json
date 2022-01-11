@@ -1,0 +1,31 @@
+{
+  "name": "order-summary-component",
+  "version": "0.0.0",
+  "description": "An order summary component.",
+  "main": "",
+  "private": true,
+  "scripts": {
+    "sass": "sass ./src/sass/main.scss ./build/css/main.css",
+    "postcss": "postcss ./build/css/main.css --output ./build/css/main.css",
+    "build:html": "ncp ./src/index.html ./build/index.html && html-minifier-terser --collapse-whitespace --remove-comments ./build/index.html --output ./build/index.html",
+    "build:css": "npm run sass && npm run postcss",
+    "build": "npm run build:html & npm run build:css & ncp ./images ./build/images",
+    "prestart": "npm run build",
+    "start": "browser-sync start --config ./bs-config.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Arthur Williams",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^10.4.2",
+    "browser-sync": "^2.27.7",
+    "cssnano": "^5.0.15",
+    "del": "^6.0.0",
+    "html-minifier-terser": "^7.0.0-alpha.1",
+    "ncp": "^2.0.0",
+    "postcss": "^8.4.5",
+    "postcss-cli": "^9.1.0",
+    "postcss-preset-env": "^7.2.0",
+    "sass": "^1.47.0"
+  }
+}
