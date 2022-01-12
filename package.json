@@ -5,14 +5,11 @@
   "main": "",
   "private": true,
   "scripts": {
-    "sass": "sass ./src/sass/main.scss ./build/css/main.css",
-    "postcss": "postcss ./build/css/main.css --output ./build/css/main.css",
-    "build:html": "ncp ./src/index.html ./build/index.html && html-minifier-terser --collapse-whitespace --remove-comments ./build/index.html --output ./build/index.html",
-    "build:css": "npm run sass && npm run postcss",
+    "build:html": "node ./scripts/build-html.js",
+    "build:css": "node ./scripts/build-css.js",
     "build": "npm run build:html & npm run build:css & ncp ./images ./build/images",
     "prestart": "npm run build",
-    "start": "browser-sync start --config ./bs-config.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./scripts/dev.js"
   },
   "author": "Arthur Williams",
   "license": "MIT",
