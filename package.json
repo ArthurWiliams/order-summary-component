@@ -7,9 +7,9 @@
   "scripts": {
     "build:html": "node ./scripts/build-html.js",
     "build:css": "node ./scripts/build-css.js",
-    "build": "npm run build:html & npm run build:css & ncp ./images ./build/images",
+    "build": "cross-env NODE_ENV=production node ./scripts/build.js & ncp ./images ./build/images",
     "prestart": "npm run build",
-    "start": "node ./scripts/dev.js"
+    "start": "cross-env NODE_ENV=development node ./scripts/dev.js"
   },
   "author": "Arthur Williams",
   "license": "MIT",
