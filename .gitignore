@@ -19,6 +19,4 @@ node_modules/
 
 *.zip
 
-*.md
-
 build/
