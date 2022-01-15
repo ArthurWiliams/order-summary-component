@@ -9,6 +9,7 @@ This is a solution to the [Order summary card challenge on Frontend Mentor](http
   - [Overview](#overview)
     - [The challenge](#the-challenge)
     - [Screenshot](#screenshot)
+    - [Links](#links)
   - [My process](#my-process)
     - [Built with](#built-with)
   - [Author](#author)
@@ -25,10 +26,10 @@ Users should be able to:
 
 ![Page screenshot](./screenshot.png)
 
-<!-- ### Links
+### Links
 
-- Solution URL: <https://your-solution-url.com>
-- Live Site URL: <https://your-live-site-url.com> -->
+<!-- - Solution URL: <https://your-solution-url.com> -->
+- Live Site URL: <https://61e29a6f5733f3000831e3d6--determined-ardinghelli-fe037b.netlify.app/>
 
 ## My process
 
