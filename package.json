@@ -7,7 +7,7 @@
   "scripts": {
     "build:html": "node ./scripts/build-html.js",
     "build:css": "node ./scripts/build-css.js",
-    "build": "cross-env NODE_ENV=production node ./scripts/build.js & ncp ./images ./build/images",
+    "build": "cross-env NODE_ENV=production node ./scripts/build.js && ncp ./images ./build/images",
     "prestart": "npm run build",
     "start": "cross-env NODE_ENV=development node ./scripts/dev.js"
   },
