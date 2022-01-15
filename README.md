@@ -28,7 +28,7 @@ Users should be able to:
 
 ### Links
 
-<!-- - Solution URL: <https://your-solution-url.com> -->
+- Solution URL: <https://www.frontendmentor.io/solutions/flexbox-summary-component-_QACawKc7>
 - Live Site URL: <https://61e29a6f5733f3000831e3d6--determined-ardinghelli-fe037b.netlify.app/>
 
 ## My process
