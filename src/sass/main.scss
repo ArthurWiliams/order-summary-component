@@ -1,3 +1,191 @@
+@use "sass:color";
+@use "sass:math";
+
+$primary-color: hsl(245, 75%, 52%);
+$primary-accent: hsl(225, 100%, 98%);
+
+$primary-accent2: hsl(225, 100%, 94%);
+
+$text-color: hsl(224, 23%, 55%);
+$heading-color: hsl(223, 47%, 23%);
+
+$border-radius: 10px;
+
+* {
+    box-sizing: border-box;
+}
+
 html {
-    background-color: rgb(91, 233, 62);
+    background-image: url("../images/pattern-background-mobile.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: $primary-accent2;
+    font-size: 14px;
+    font-family: "Red Hat Display", sans-serif;
+}
+
+body {
+    padding: 1rem;
+    margin: 0;
+}
+
+html,
+body,
+main {
+    height: 100%;
+}
+
+@for $i from 1 through 6 {
+    h#{$i} {
+        font-size: 1.8rem - math.div($i, 10);
+        color: $heading-color;
+        font-weight: 900;
+    }
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+p {
+    letter-spacing: 0.4px;
+    line-height: 1.8;
+    color: $text-color;
+    margin: 1.5rem 0;
+}
+
+a {
+    color: $primary-color;
+    font-weight: 700;
+    cursor: pointer;
+    transition-property: color background-color;
+    transition-duration: 120ms;
+    transition-timing-function: ease-out;
+
+    &:hover {
+        color: color.adjust($primary-color, $alpha: -0.3);
+        text-decoration: none;
+    }
+}
+
+.container {
+    padding: 1rem 1.8rem 1.5rem;
+}
+
+.order-summary {
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    text-align: center;
+    max-width: 24rem;
+    box-shadow: 0 30px 30px rgba(0, 0, 0, 0.1);
+
+    &__content {
+        background-color: white;
+    }
+}
+
+.plan-viewer {
+    border-radius: $border-radius;
+    background-color: $primary-accent;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    margin-bottom: 2rem;
+
+    &__details {
+        margin-left: 1.4rem;
+        text-align: left;
+        flex-grow: 1;
+    }
+
+    &__type {
+        color: $heading-color;
+        font-weight: 900;
+        margin-bottom: 0.3rem;
+    }
+
+    &__expense {
+        color: $text-color;
+    }
+}
+
+.button-group > button + button {
+    margin-top: 0.8rem;
+}
+
+.button {
+    border-radius: $border-radius;
+    border: none;
+    padding: 1rem;
+    width: 100%;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.96rem;
+    font-weight: bold;
+    transition-property: color background-color;
+    transition-duration: 120ms;
+    transition-timing-function: ease-out;
+
+    &--primary {
+        background-color: $primary-color;
+        color: rgb(255, 255, 255);
+        box-shadow: 0 23px 18px rgba(0, 0, 0, 0.1);
+
+        &:hover {
+            background-color: color.adjust($primary-color, $alpha: -0.3);
+        }
+    }
+
+    &--secondary {
+        background-color: transparent;
+        color: $text-color;
+
+        &:hover {
+            color: $heading-color;
+        }
+    }
+}
+
+.sr-only {
+    position: absolute;
+
+    height: 1px;
+    width: 1px;
+
+    margin: -1px;
+    padding: 0;
+
+    overflow: hidden;
+    white-space: nowrap;
+
+    /* IE */
+    clip: rect(1px 1px 1px 1px);
+
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+}
+
+@media screen and (min-width: 992px) {
+    html {
+        font-size: 16px;
+        background-image: url("../images/pattern-background-desktop.svg");
+        background-size: contain;
+    }
+
+    .container {
+        padding: 1.9rem 3rem 1.7rem;
+    }
+
+    .order-summary {
+        max-width: 28rem;
+    }
+
+    .plan-viewer {
+        padding: 1.5rem;
+    }
 }
