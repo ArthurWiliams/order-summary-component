@@ -1,0 +1,63 @@
+@use "sass:math";
+@use "sass:color";
+
+@use "./variables" as var;
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    background-image: url("../images/pattern-background-mobile.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: var.$primary-accent2;
+    font-size: 14px;
+    font-family: "Red Hat Display", sans-serif;
+}
+
+body {
+    padding: 1rem;
+    margin: 0;
+}
+
+html,
+body,
+main {
+    height: 100%;
+}
+
+@for $i from 1 through 6 {
+    h#{$i} {
+        font-size: 1.8rem - math.div($i, 10);
+        color: var.$heading-color;
+        font-weight: 900;
+    }
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+p {
+    letter-spacing: 0.4px;
+    line-height: 1.6;
+    color: var.$text-color;
+    margin: 1.5rem 0;
+}
+
+a {
+    color: var.$primary-color;
+    font-weight: 700;
+    cursor: pointer;
+    transition-property: color background-color;
+    transition-duration: 120ms;
+    transition-timing-function: ease-out;
+
+    &:hover {
+        color: color.adjust(var.$primary-color, $alpha: -0.3);
+        text-decoration: none;
+    }
+}

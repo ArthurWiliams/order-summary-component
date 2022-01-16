@@ -1,74 +1,7 @@
 @use "sass:color";
-@use "sass:math";
 
-$primary-color: hsl(245, 75%, 52%);
-$primary-accent: hsl(225, 100%, 98%);
-
-$primary-accent2: hsl(225, 100%, 94%);
-
-$text-color: hsl(224, 23%, 55%);
-$heading-color: hsl(223, 47%, 23%);
-
-$border-radius: 10px;
-
-* {
-    box-sizing: border-box;
-}
-
-html {
-    background-image: url("../images/pattern-background-mobile.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: $primary-accent2;
-    font-size: 14px;
-    font-family: "Red Hat Display", sans-serif;
-}
-
-body {
-    padding: 1rem;
-    margin: 0;
-}
-
-html,
-body,
-main {
-    height: 100%;
-}
-
-@for $i from 1 through 6 {
-    h#{$i} {
-        font-size: 1.8rem - math.div($i, 10);
-        color: $heading-color;
-        font-weight: 900;
-    }
-}
-
-main {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-p {
-    letter-spacing: 0.4px;
-    line-height: 1.8;
-    color: $text-color;
-    margin: 1.5rem 0;
-}
-
-a {
-    color: $primary-color;
-    font-weight: 700;
-    cursor: pointer;
-    transition-property: color background-color;
-    transition-duration: 120ms;
-    transition-timing-function: ease-out;
-
-    &:hover {
-        color: color.adjust($primary-color, $alpha: -0.3);
-        text-decoration: none;
-    }
-}
+@use "./base";
+@use "./variables" as var;
 
 .container {
     padding: 1rem 1.8rem 1.5rem;
@@ -89,8 +22,8 @@ a {
 }
 
 .plan-viewer {
-    border-radius: $border-radius;
-    background-color: $primary-accent;
+    border-radius: var.$border-radius;
+    background-color: var.$primary-accent;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -104,13 +37,13 @@ a {
     }
 
     &__type {
-        color: $heading-color;
+        color: var.$heading-color;
         font-weight: 900;
         margin-bottom: 0.3rem;
     }
 
     &__expense {
-        color: $text-color;
+        color: var.$text-color;
     }
 }
 
@@ -119,7 +52,7 @@ a {
 }
 
 .button {
-    border-radius: $border-radius;
+    border-radius: var.$border-radius;
     border: none;
     padding: 1rem;
     width: 100%;
@@ -132,21 +65,21 @@ a {
     transition-timing-function: ease-out;
 
     &--primary {
-        background-color: $primary-color;
+        background-color: var.$primary-color;
         color: rgb(255, 255, 255);
         box-shadow: 0 23px 18px rgba(0, 0, 0, 0.1);
 
         &:hover {
-            background-color: color.adjust($primary-color, $alpha: -0.3);
+            background-color: color.adjust(var.$primary-color, $alpha: -0.3);
         }
     }
 
     &--secondary {
         background-color: transparent;
-        color: $text-color;
+        color: var.$text-color;
 
         &:hover {
-            color: $heading-color;
+            color: var.$heading-color;
         }
     }
 }
