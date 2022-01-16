@@ -23,7 +23,6 @@ body {
 
 @for $i from 1 through 6 {
     h#{$i} {
-        font-size: 1.8rem - math.div($i, 10);
         color: var.$heading-color;
         font-weight: 900;
     }
