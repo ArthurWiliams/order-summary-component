@@ -4,7 +4,7 @@
 @use "./variables" as var;
 
 ::selection {
-    color: rgb(255, 255, 255);
+    color: var.$on-primary;
     background-color: var.$primary-color;
 }
 
