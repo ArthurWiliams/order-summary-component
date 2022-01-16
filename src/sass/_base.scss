@@ -10,7 +10,7 @@
 html {
     background-image: url("../images/pattern-background-mobile.svg");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     background-color: var.$primary-accent2;
     font-size: 14px;
     font-family: "Red Hat Display", sans-serif;
