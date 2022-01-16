@@ -42,7 +42,8 @@
 
     &__type {
         color: var.$heading-color;
-        font-weight: 900;
+        font-size: inherit;
+        margin: 0;
         margin-bottom: 0.3rem;
     }
 
