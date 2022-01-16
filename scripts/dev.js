@@ -3,6 +3,7 @@ const buildHtml = require("./build-html");
 const SERVER = require("browser-sync").create();
 
 const {
+    SASS_DIRECTORY,
     SASS_ENTRY,
     OUTPUT_CSS,
     HTML_ENTRY,
@@ -11,7 +12,7 @@ const {
 } = require("./paths");
 
 SERVER.watch(
-    SASS_ENTRY,
+    SASS_DIRECTORY,
     { awaitWriteFinish: true },
     async function (event, file) {
         if (event === "change") {
