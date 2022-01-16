@@ -3,6 +3,11 @@
 
 @use "./variables" as var;
 
+::selection {
+    color: rgb(255, 255, 255);
+    background-color: var.$primary-color;
+}
+
 * {
     box-sizing: border-box;
 }
